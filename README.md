@@ -1,0 +1,1 @@
+# location-search-nextjs-interview-assessment
