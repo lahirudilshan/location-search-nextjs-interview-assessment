@@ -13,6 +13,7 @@ const Flex = styled.div<{
     minHeight?: string;
     margin?: string;
     gap?: string
+    wrap?: Property.FlexWrap
 }>`
     display: flex;
     ${props => props.direction && `flex-direction: ${props.direction};`}
@@ -23,6 +24,7 @@ const Flex = styled.div<{
     ${props => props.width && `width: ${props.width};`}
     ${props => props.margin && `margin: ${props.margin};`}
     ${props => props.gap && `gap: ${props.gap};`}
+    ${props => props.wrap && `flex-wrap: ${props.wrap};`}
 `;
 
 // spaces utils

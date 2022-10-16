@@ -129,16 +129,7 @@ const Map = ({
                 }}
             >
                 <>
-                    <StandaloneSearchBox
-                        onLoad={onAutocompleteLoad}
-                        onPlacesChanged={onPlaceChanged}
-                    >
-                        <Flex justifyContent={'center'} alignItems={'center'}>
-                            <div className="map-search-container">
-                                <Search />
-                            </div>
-                        </Flex>
-                    </StandaloneSearchBox>
+                    <Search onAutocompleteLoad={onAutocompleteLoad} onPlaceChanged={onPlaceChanged} />
 
                     {currentLocation && mapSettings.currentLocation && <Marker position={currentLocation}>
                         {mapSettings.currentLocation.place && <InfoWindow position={currentLocation}>
