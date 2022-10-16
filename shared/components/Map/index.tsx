@@ -93,6 +93,11 @@ const Map = ({
             const place = places && places[0] || null;
 
             if (place && place.geometry && place.geometry.location) {
+                // offset map center for better visibility to infoWindow
+                setTimeout(() => {
+                    mapSettings?.map?.panBy(0, -350)
+                }, 100);
+
                 setMapSettings((prev) => ({
                     ...prev,
                     currentLocation: {
