@@ -1,14 +1,15 @@
 # Find Location on Map - Interview Assessment
 
-This is a React (NextJs) based Interview Assessment for cover FE dev skills with software development best practices.
+This is a React (NextJs) based Interview Assessment to cover FE dev skills with software development best practices.
 
 <img src="https://github.com/lahirudilshan/location-search-nextjs-interview-assessment/blob/master/public/logo.png" width="180">
 
 ## Application Features
 
-- User any location on map
-- View search location on Map with a image (if available)
+- User can search any location on map
+- View searched location on Map with a image (if available)
 - show user tried search terms as history
+- remove search history
 - User friendly UI design
   <br/>
   <br/>
