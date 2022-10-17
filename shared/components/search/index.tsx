@@ -5,7 +5,8 @@ import { TReducer } from '@shared/states/store';
 import { Flex, Space } from '@shared/utils/styles';
 import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import styled from 'styled-components';
+import { TSearchProps } from '@shared/components/search/type';
+import { SearchContainer } from '@shared/components/search/style';
 
 const Search = ({ onAutocompleteLoad, onPlaceChanged }: TSearchProps) => {
     // hooks
@@ -83,19 +84,5 @@ const Search = ({ onAutocompleteLoad, onPlaceChanged }: TSearchProps) => {
         </SearchContainer>
     )
 }
-
-// types
-type TSearchProps = {
-    onAutocompleteLoad: ((searchBox: google.maps.places.SearchBox) => void) | undefined
-    onPlaceChanged: () => void
-}
-
-// styles
-const SearchContainer = styled.div`
-    padding: 20px;
-    input {
-        width: 700px;
-    }
-`;
 
 export default Search

@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react';
-import styled from 'styled-components';
 import { GoogleMap, InfoWindowF as InfoWindow, MarkerF as Marker, useJsApiLoader } from '@react-google-maps/api';
-import { Libraries, TLocation, TMapParams } from '@shared/components/map/mapType';
-import Loader from '@shared/components/Loader';
-import Search from '@shared/components/Search';
+import { Libraries, TDefaultMapState, TMapParams } from '@shared/components/map/type';
 import { Flex, Space } from '@shared/utils/styles';
 import { Typography } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Search from '../search';
+import Loader from '@shared/components/loader';
+import { MapContainer } from '@shared/components/map/style';
 
 // variables
 const libraries: Libraries = ['places']; // required map libraries
@@ -105,7 +105,7 @@ const Map = ({
     };
 
     return isLoaded ? (
-        <MapStyled>
+        <MapContainer>
             <GoogleMap
                 mapContainerStyle={{
                     width,
@@ -142,71 +142,10 @@ const Map = ({
                     </Marker>}
                 </>
             </GoogleMap>
-        </MapStyled>
+        </MapContainer>
     ) : (
         <Loader />
     );
 };
-
-// types
-type TDefaultMapState = {
-    autocomplete: google.maps.places.SearchBox | undefined;
-    map: google.maps.Map | undefined;
-    currentLocation: TLocation | undefined;
-    message: string | undefined;
-};
-
-// styles
-const MapStyled = styled.div`
-    .map-container,
-    .map-loading-container {
-        width: 100%;
-        min-height: 585px;
-        background-color: #f1f1f1;
-    }
-    .map-loading-container {
-        font-size: 50px;
-    }
-    .gm-ui-hover-effect {
-        padding: 16px 46px !important;
-    }
-    .ant-input {
-        border-color: none !important;
-        box-shadow: none !important;
-        border-color: none !important;
-    }
-    .map-search-container {
-        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
-        background-color: #ffffff;
-        padding: 20px;
-        position: relative;
-        margin: 20px;
-        border-radius: 8px;
-        max-width: 50vw;
-        margin-top: 25px;
-    }
-    .gm-style-iw {
-        button.gm-ui-hover-effect {
-            visibility: hidden;
-        }
-        padding: 10px;
-        img {
-            width: 400px;
-            border-radius: 8px;
-        }
-    }
-`;
-
-/**
- * export MapContainer to use override map related styles
- */
-export const MapContainer = styled.div`
-    .ant-form-item-explain {
-        margin-top: 1rem;
-        background-color: #ff4d4e14;
-        padding: 17px 20px;
-        border: 1px solid #ff4d4e38;
-    }
-`;
 
 export default Map;

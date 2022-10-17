@@ -10,4 +10,11 @@ export type TMapParams = {
     defaultLocation?: google.maps.LatLng | google.maps.LatLngLiteral;
 }
 
+export type TDefaultMapState = {
+    autocomplete: google.maps.places.SearchBox | undefined;
+    map: google.maps.Map | undefined;
+    currentLocation: TLocation | undefined;
+    message: string | undefined;
+};
+
 export declare type Libraries = ('drawing' | 'geometry' | 'localContext' | 'places' | 'visualization')[];
