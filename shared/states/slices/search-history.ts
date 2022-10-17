@@ -12,11 +12,8 @@ const searchHistorySlice = createSlice({
     name: 'history',
     initialState,
     reducers: {
-        fetch: state => {
-            state.histories
-        },
         save: (state, param) => {
-            state.histories.push(param.payload);
+            if (!state.histories.includes(param.payload)) state.histories.push(param.payload);
         },
         remove: (state, param) => {
             state.histories = state.histories.filter((history) => history !== param.payload);

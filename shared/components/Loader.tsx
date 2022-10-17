@@ -44,8 +44,7 @@ type TLoaderParams = {
 
 // styles
 const LoaderContainer = styled.div<{ width?: string; height?: string; minHeight?: string; loaderSize?: string; type?: string }>`
-    .loading-container,
-    &.ant-modal-content {
+    .loading-container {
         width: ${props => props.width};
         height: ${props => props.height} !important;
         min-height: ${props => props.minHeight} !important;

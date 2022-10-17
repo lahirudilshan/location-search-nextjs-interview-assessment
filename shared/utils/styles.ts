@@ -47,49 +47,7 @@ const Space = styled.div<{
     ${props => props.size && `margin: ${props.size}${(props.unit && props.unit) || 'rem'}`};
 `;
 
-// text utils
-const TextBold = styled.div<{ weight?: Property.FontWeight | number }>`
-    ${props => `font-weight: ${props.weight || 400}`};
-`;
-
-const TextTruncate = styled.div<{ size: number }>`
-    ${props => `width: ${props.size || 250}rem`};
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-`;
-
-// others
-const PageContent = styled.div < { top?: number; bottom?: number; left?: number; right?: number; unit?: keyof typeof CSSUnits; }>`
-    ${props => `margin-top: ${props.top || 4}${props.unit || 'rem'}`};
-    ${props => `margin-bottom: ${props.bottom || 4}${props.unit || 'rem'}`};
-    ${props => `margin-left: ${props.left || 4}${props.unit || 'rem'}`};
-    ${props => `margin-right: ${props.right || 4}${props.unit || 'rem'}`};
-
-    .ant-tabs-nav {
-        margin-bottom: 0;
-    }
-`;
-
-const MinHeight = styled.div<{ size?: number; unit?: keyof typeof CSSUnits }>`
-    ${props => `min-height: ${props.size || 20}${props.unit || 'rem'}`};
-`;
-
-const ScrollView = styled.div<{ height?: string; }>`
-  height: ${props => props.height || '20rem'};
-`;
-
-const Position = styled.div<{ type?: Property.Position }>`
- position: ${(props) => `${props.type || 'relative'}`};
-`;
-
 export {
     Flex,
-    Space,
-    PageContent,
-    TextTruncate,
-    TextBold,
-    MinHeight,
-    ScrollView,
-    Position
+    Space
 };

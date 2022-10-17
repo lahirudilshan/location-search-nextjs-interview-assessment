@@ -1,15 +1,11 @@
 import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
-import { GoogleMap, InfoWindowF as InfoWindow, MarkerF as Marker, StandaloneSearchBox, useJsApiLoader } from '@react-google-maps/api';
-import {
-    Libraries,
-    TLocation,
-    TMapParams,
-} from '@shared/components/Map/mapType';
-import Loader from '../Loader';
-import Search from '../Search';
-import { Flex, MinHeight, ScrollView, Space } from '@shared/utils/styles';
-import { ImageList, ImageListItem, Typography } from '@mui/material';
+import { GoogleMap, InfoWindowF as InfoWindow, MarkerF as Marker, useJsApiLoader } from '@react-google-maps/api';
+import { Libraries, TLocation, TMapParams } from '@shared/components/map/mapType';
+import Loader from '@shared/components/Loader';
+import Search from '@shared/components/Search';
+import { Flex, Space } from '@shared/utils/styles';
+import { Typography } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 // variables
@@ -33,15 +29,16 @@ const Map = ({
         message: undefined,
     };
 
-    // states
-    const [mapSettings, setMapSettings] = useState<TDefaultMapState>(defaultMapState);
-
+    // hooks
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.NEXT_PUBLIC_MAP_API_TOKEN as string,
         libraries: libraries,
         language: 'en',
     });
+
+    // states
+    const [mapSettings, setMapSettings] = useState<TDefaultMapState>(defaultMapState);
 
     /**
      * on map load call this function for setup map instance
@@ -55,10 +52,7 @@ const Map = ({
      * reset state when component un mount
      * @return void
      */
-    const onUnmount = (map: google.maps.Map) => {
-        console.log('unmounted');
-
-    };
+    const onUnmount = (map: google.maps.Map) => { };
 
     /**
      * when search box load call this function for updating autocomplete instance in map state
@@ -133,19 +127,17 @@ const Map = ({
 
                     {currentLocation && mapSettings.currentLocation && <Marker position={currentLocation}>
                         {mapSettings.currentLocation.place && <InfoWindow position={currentLocation}>
-                            <MinHeight size={10}>
-                                <Space size={1}>
-                                    <Typography variant="h6" gutterBottom>
-                                        <Flex justifyContent={'center'} alignItems={'center'}>
-                                            <LocationOnIcon /> {mapSettings.currentLocation.place.formatted_address}
-                                        </Flex>
-                                    </Typography>
+                            <Space size={1}>
+                                <Typography variant="h6" gutterBottom>
+                                    <Flex justifyContent={'center'} alignItems={'center'}>
+                                        <LocationOnIcon /> {mapSettings.currentLocation.place.formatted_address}
+                                    </Flex>
+                                </Typography>
 
-                                    <Space top={1}>
-                                        {mapSettings.currentLocation.place.photos?.length && <img src={mapSettings.currentLocation.place.photos[0].getUrl()} loading="lazy" />}
-                                    </Space>
+                                <Space top={1}>
+                                    {mapSettings.currentLocation.place.photos?.length && <img src={mapSettings.currentLocation.place.photos[0].getUrl()} loading="lazy" />}
                                 </Space>
-                            </MinHeight>
+                            </Space>
                         </InfoWindow>}
                     </Marker>}
                 </>

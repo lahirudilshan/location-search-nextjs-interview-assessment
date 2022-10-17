@@ -3,7 +3,7 @@ import { StandaloneSearchBox } from '@react-google-maps/api';
 import { searchHistoryAction } from '@shared/states/slices/search-history';
 import { TReducer } from '@shared/states/store';
 import { Flex, Space } from '@shared/utils/styles';
-import React, { useRef } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
@@ -12,35 +12,40 @@ const Search = ({ onAutocompleteLoad, onPlaceChanged }: TSearchProps) => {
     const dispatcher = useDispatch();
     const search = useSelector((state: TReducer) => state.search);
 
-    // ref
-    const searchRef = useRef<HTMLInputElement>(null);
+    // state
+    const [searchTerm, setSearchTerm] = useState<string>('');
 
     /**
      * handle search history on click search again 
      * @param term: string
      * @return void
      */
-    const handleSearchTagClick = (term: string) => {
-        dispatcher(searchHistoryAction.save(term))
-    }
+    const handleSearchTagClick = useCallback((term: string) => {
+        setSearchTerm(term);
+    }, []);
 
     /**
      * handle search history remove
      * @param term: string
      * @return void
      */
-    const handleSearchTagRemove = (term: string) => {
+    const handleSearchTagRemove = useCallback((term: string) => {
         dispatcher(searchHistoryAction.remove(term))
-    }
+    }, []);
 
     /**
      * handle map place location change
      * @return void
      */
-    const handlePlaceChanged = () => {
-        dispatcher(searchHistoryAction.save(searchRef.current?.value))
+    const handlePlaceChanged = useCallback(() => {
+        setSearchTerm(searchTerm);
+        dispatcher(searchHistoryAction.save(searchTerm))
         onPlaceChanged();
-    }
+    }, [searchTerm]);
+
+    const handleOnSearch = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(event.target.value);
+    }, []);
 
     return (
         <SearchContainer>
@@ -50,12 +55,28 @@ const Search = ({ onAutocompleteLoad, onPlaceChanged }: TSearchProps) => {
             >
                 <Flex justifyContent={'center'} alignItems={'center'}>
                     <div className="map-search-container">
-                        <TextField inputRef={searchRef} label="Search Location" placeholder='Enter any location name for search...' variant="outlined" />
-                        {search && search.histories && search.histories.length > 0 && <Space top={1}>
-                            <Flex className="search-tags" gap='20px' alignItems={'center'} wrap={'wrap'}>
-                                {search.histories.map((term: string, index: number) => <Chip key={index} label={term} onClick={() => handleSearchTagClick(term)} onDelete={() => handleSearchTagRemove(term)} />)}
-                            </Flex>
-                        </Space>}
+                        <TextField
+                            value={searchTerm}
+                            onChange={handleOnSearch}
+                            label="Search Location"
+                            placeholder='Enter any location name for search...'
+                            variant="outlined"
+                        />
+
+                        {search && search.histories && search.histories.length > 0 && (
+                            <Space top={1}>
+                                <Flex className="search-tags" gap='20px' alignItems={'center'} wrap={'wrap'}>
+                                    {search.histories.map((term: string, index: number) => (
+                                        <Chip
+                                            key={index}
+                                            label={term}
+                                            onClick={() => handleSearchTagClick(term)}
+                                            onDelete={() => handleSearchTagRemove(term)}
+                                        />
+                                    ))}
+                                </Flex>
+                            </Space>
+                        )}
                     </div>
                 </Flex>
             </StandaloneSearchBox>
