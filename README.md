@@ -13,10 +13,6 @@ This is a React (NextJs) based Interview Assessment for cover FE dev skills with
   <br/>
   <br/>
 
-## Demo
-
-[![Demo video](https://img.youtube.com/vi/5mtHDvlw3is/0.jpg)](https://www.youtube.com/watch?v=5mtHDvlw3is)
-
 ## Used technologies
 
 | Name                          | Description                                                 | Link                                |
@@ -65,40 +61,28 @@ Application live in
 
 ## Application Screenshots
 
-Candidates list view
+Default page
 <br/>
 <br/>
-<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/list.png">
+<img src="https://github.com/lahirudilshan/location-search-nextjs-interview-assessment/blob/master/public/screenshots/step-1.png">
 <br/>
 <br/>
-Candidate Detail view
+Autocomplete search result
 <br/>
 <br/>
-<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/detail-view.png">
+<img src="https://github.com/lahirudilshan/location-search-nextjs-interview-assessment/blob/master/public/screenshots/step-2.png">
 <br/>
 <br/>
-User Profile Edit
+View location
 <br/>
 <br/>
-<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/profile-edit.png">
-<br/>
-<br/>
-User Profile Experience add
-<br/>
-<br/>
-<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/experience-add.png">
-<br/>
-<br/>
-User Profile Experience edit
-<br/>
-<br/>
-<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/experience-edit.png">
+<img src="https://github.com/lahirudilshan/location-search-nextjs-interview-assessment/blob/master/public/screenshots/step-3.png">
 <br/>
 <br/>
 
 ## Support
 
-This application use **heroku, vercel, googleapis** as free service and time to need to update keys, etc...if you face any difficulty to view the application please reach me with below medias
+This application use **vercel, googleapis** as free service and time to need to update keys, etc...if you face any difficulty to view the application please reach me with below medias
 <br/>
 
 ## 🔗 Links
