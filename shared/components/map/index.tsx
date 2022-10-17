@@ -12,8 +12,8 @@ import { MapContainer } from '@shared/components/map/style';
 const libraries: Libraries = ['places']; // required map libraries
 
 const defaultLocationData: google.maps.LatLng | google.maps.LatLngLiteral = {
-    lat: 25.276987,
-    lng: 55.296249
+    lat: 6.927079,
+    lng: 79.861244
 };
 
 const Map = ({
