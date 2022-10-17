@@ -1,34 +1,118 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Find Location on Map - Interview Assessment
 
-## Getting Started
+This is a React (NextJs) based Interview Assessment for cover FE dev skills with software development best practices.
 
-First, run the development server:
+<img src="https://github.com/lahirudilshan/location-search-nextjs-interview-assessment/blob/master/public/logo.png" width="180">
+
+## Application Features
+
+- User any location on map
+- View search location on Map with a image (if available)
+- show user tried search terms as history
+- User friendly UI design
+  <br/>
+  <br/>
+
+## Demo
+
+[![Demo video](https://img.youtube.com/vi/5mtHDvlw3is/0.jpg)](https://www.youtube.com/watch?v=5mtHDvlw3is)
+
+## Used technologies
+
+| Name                          | Description                                                 | Link                                |
+| :---------------------------- | :---------------------------------------------------------- | :---------------------------------- |
+| `NextJs (React) + Typescript` | used NextJs for Both Backend and Frontend                   | https://nextjs.org/                 |
+| `Material UI (MUI)`           | Material UI (MUI) use for UI design                         | https://ant.design/                 |
+| `Styled component`            | used for custom style with dynamic variable                 | https://styled-components.com/      |
+| `googleapis`                  | used google map and places API for search and view location | https://developers.google.com/drive |
+| `vercel`                      | used as Hosting server (free)                               | https://vercel.com/                 |
+
+## Application Reference
+
+You can also visit and search your favorite location and view it \
+Visit: https://top100-candidates.vercel.app/
+
+## Installation
+
+Preinstalled tools
+
+- yarn / npm
+- git
+
+Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
+  git clone https://github.com/lahirudilshan/location-search-nextjs-interview-assessment.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependence
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+  yarn install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Run the application
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+  yarn run dev
+```
 
-## Learn More
+Application live in
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  http://localhost:3000/
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Application Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Candidates list view
+<br/>
+<br/>
+<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/list.png">
+<br/>
+<br/>
+Candidate Detail view
+<br/>
+<br/>
+<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/detail-view.png">
+<br/>
+<br/>
+User Profile Edit
+<br/>
+<br/>
+<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/profile-edit.png">
+<br/>
+<br/>
+User Profile Experience add
+<br/>
+<br/>
+<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/experience-add.png">
+<br/>
+<br/>
+User Profile Experience edit
+<br/>
+<br/>
+<img src="https://github.com/lahirudilshan/candidate-profile-manager-interview-assessment/blob/master/public/screenshots/experience-edit.png">
+<br/>
+<br/>
 
-## Deploy on Vercel
+## Support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This application use **heroku, vercel, googleapis** as free service and time to need to update keys, etc...if you face any difficulty to view the application please reach me with below medias
+<br/>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://lahirudilshan.github.io/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://lk.linkedin.com/in/lahiru-dilshan-408ab3108)
+
+[![twitter](https://img.shields.io/badge/gmail-c0392b?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lahiru4unew4@gmail.com)
+
+<br/>
+
+## 🚀 About Me
+
+Senior JavaScript Fullstack Engineer with 6+ years of experience , Focused on Frontend, Skilled in **React, NextJs**, Angular, Node.js, and Pixel perfect UI design
+
+**From In Sri Lanka**
