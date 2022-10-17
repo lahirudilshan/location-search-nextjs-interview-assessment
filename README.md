@@ -8,7 +8,7 @@ This is a React (NextJs) based Interview Assessment to cover FE dev skills with 
 
 - User can search any location on map
 - View searched location on Map with a image (if available)
-- show user tried search terms as history
+- shows user tried search terms as history
 - remove search history
 - User friendly UI design
   <br/>
@@ -18,7 +18,7 @@ This is a React (NextJs) based Interview Assessment to cover FE dev skills with 
 
 | Name                          | Description                                                 | Link                                |
 | :---------------------------- | :---------------------------------------------------------- | :---------------------------------- |
-| `NextJs (React) + Typescript` | used NextJs for Both Backend and Frontend                   | https://nextjs.org/                 |
+| `NextJs (React) + Typescript` | used NextJs as Frontend Framework                           | https://nextjs.org/                 |
 | `Material UI (MUI)`           | Material UI (MUI) use for UI design                         | https://ant.design/                 |
 | `Styled component`            | used for custom style with dynamic variable                 | https://styled-components.com/      |
 | `googleapis`                  | used google map and places API for search and view location | https://developers.google.com/drive |
@@ -26,8 +26,8 @@ This is a React (NextJs) based Interview Assessment to cover FE dev skills with 
 
 ## Application Reference
 
-You can also visit and search your favorite location and view it \
-Visit: https://top100-candidates.vercel.app/
+You can also visit, search your favorite location and view it \
+Visit: https://find-location-assessment.vercel.app/
 
 ## Installation
 
@@ -100,4 +100,4 @@ This application use **vercel, googleapis** as free service and time to need to 
 
 Senior JavaScript Fullstack Engineer with 6+ years of experience , Focused on Frontend, Skilled in **React, NextJs**, Angular, Node.js, and Pixel perfect UI design
 
-**From In Sri Lanka**
+**From Sri Lanka**
