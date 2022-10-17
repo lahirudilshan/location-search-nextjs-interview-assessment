@@ -14,6 +14,10 @@ This is a React (NextJs) based Interview Assessment to cover FE dev skills with 
   <br/>
   <br/>
 
+## Demo
+
+[![Demo video](https://img.youtube.com/vi/pbzxitLchYk/0.jpg)](https://www.youtube.com/watch?v=pbzxitLchYk)
+
 ## Used technologies
 
 | Name                          | Description                                                 | Link                                |
